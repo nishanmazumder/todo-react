@@ -4,9 +4,9 @@ import Todoitem from "./Todoitem";
 
 function Todo(props) {
   return (
-    <div>
+    <div className="container">
       <h3>Todo List</h3>
-      {props.items.length == 0
+      {props.items.length === 0
         ? "No data"
         : props.items.map((data) => {
             return (
