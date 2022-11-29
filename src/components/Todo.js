@@ -10,7 +10,7 @@ function Todo(props) {
         ? "No data"
         : props.items.map((data) => {
             return (
-              <Todoitem key={data.id} todo={data} onDelete={props.onDelete} />
+              <Todoitem key={data.id + '-' + data.title} todo={data} onDelete={props.onDelete} />
             );
           })}
     </div>
