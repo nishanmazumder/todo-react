@@ -9,8 +9,10 @@ function TodoAdd({ addTodo }) {
 
     if (!title || !desc) {
       alert("Fileds should not blank!");
+    }else{
+      addTodo(title, desc);
     }
-    addTodo(title, desc);
+
   };
 
   return (

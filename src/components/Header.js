@@ -44,7 +44,7 @@ export default function Header(prop) {
               </Link>
               <ul className="dropdown-menu">
                 <li>
-                  <Link className="dropdown-item" to="#">
+                  <Link className="dropdown-item" to="/action">
                     Action
                   </Link>
                 </li>

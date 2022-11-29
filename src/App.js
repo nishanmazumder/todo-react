@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Todo from "./components/Todo";
 import TodoAdd from "./components/TodoAdd";
 import Contact from "./components/Contact";
+import PageNotFound from "./components/404";
 
 function App() {
   ////////////////////// Define Todo
@@ -64,9 +65,6 @@ function App() {
         <Header title="Logo" search={false} />
         <Routes>
           <Route path="/" element={<Home />}></Route>
-        </Routes>
-
-        <Routes>
           <Route
             path="/todo"
             element={
@@ -76,10 +74,8 @@ function App() {
               </>
             }
           ></Route>
-        </Routes>
-
-        <Routes>
           <Route path="/contact" element={<Contact />}></Route>
+          <Route path="*" element={<PageNotFound />}></Route>
         </Routes>
 
         <Footer />
