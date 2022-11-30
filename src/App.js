@@ -64,7 +64,7 @@ function App() {
       <Router>
         <Header title="Logo" search={false} />
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<Home page="Home" />}></Route>
           <Route
             path="/todo"
             element={
