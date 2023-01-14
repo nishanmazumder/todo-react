@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Todo from "./components/Todo";
 import TodoAdd from "./components/TodoAdd";
 import Contact from "./components/Contact";
+import Clock from './components/toogleOnOff'
 import PageNotFound from "./components/404";
 
 function App() {
@@ -74,6 +75,7 @@ function App() {
               </>
             }
           ></Route>
+          <Route path="/toggleonoff" element={<Clock local={"bn-BD"} />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="*" element={<PageNotFound />}></Route>
         </Routes>
