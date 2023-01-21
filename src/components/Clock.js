@@ -13,31 +13,35 @@ class Clock extends React.Component {
   state = { date: new Date(), local: "bn-BD" };
 
   componentDidMount() {
-    this.clockTime = setInterval(()=>{
-        this.tick()
-    }, 1000)
+    this.clockTime = setInterval(() => {
+      this.tick();
+    }, 1000);
   }
 
-  componentWillUnmount(){
-    clearInterval(this.clockTime)
+  componentWillUnmount() {
+    clearInterval(this.clockTime);
   }
 
-  tick = () =>{
-    this.setState({date: new Date()})
-  }
+  tick = () => {
+    this.setState({ date: new Date() });
+  };
 
-  localChange = (local) =>{
-    this.setState({ local: local });
-  }
+  localChange = (local) => {
+    this.setState({ local });
+  };
 
   render() {
     // console.log("render clock")
-    const {date, local} = this.state
+    const { date, local } = this.state;
     return (
       <>
         <span>{date.toLocaleTimeString(local)}</span>
-        <Button change={this.localChange.bind(this, "en-US")}> Click </Button>
-        <Component/>
+        {local === "bn-BD" ? (
+          <Button change={this.localChange} local="en-US" show={false}/>
+        ) : (
+          <Button change={this.localChange} local="bn-BD" show/>
+        )}
+        <Component />
       </>
     );
   }
