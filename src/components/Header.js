@@ -56,8 +56,8 @@ export default function Header(prop) {
               </ul>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/toggleonoff">
-                ToggleOnOff
+              <Link className="nav-link" to="/clock">
+                Clock
               </Link>
             </li>
             <li className="nav-item">

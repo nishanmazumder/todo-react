@@ -7,7 +7,7 @@ import Home from "./components/Home";
 import Todo from "./components/Todo";
 import TodoAdd from "./components/TodoAdd";
 import Contact from "./components/Contact";
-import Clock from './components/toogleOnOff'
+import Clock from './components/Clock'
 import PageNotFound from "./components/404";
 
 function App() {
@@ -59,7 +59,7 @@ function App() {
   // console.log(localStorage.getItem('todos'))
 
   // localStorage.clear()
-
+  console.log("render App")
   return (
     <>
       <Router>
@@ -75,7 +75,7 @@ function App() {
               </>
             }
           ></Route>
-          <Route path="/toggleonoff" element={<Clock local={"bn-BD"} />}></Route>
+          <Route path="/clock" element={<Clock />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="*" element={<PageNotFound />}></Route>
         </Routes>
