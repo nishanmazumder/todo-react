@@ -27,19 +27,19 @@ class Calculator extends React.Component {
       scale === "c" ? convert(temparature, toFarenhite) : temparature;
 
     return (
-      <>
+      <div>
         <TemparatureInput
           scale="c"
-          temperature={celsious}
+          temparature={celsious}
           temparatureOnChange={this.handleClick}
         />
         <TemparatureInput
           scale="f"
-          temperature={fahrenheit}
+          temparature={fahrenheit}
           temparatureOnChange={this.handleClick}
         />
         <Display value={temparature} />
-      </>
+      </div>
     );
   }
 }
