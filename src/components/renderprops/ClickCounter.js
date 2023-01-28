@@ -1,10 +1,11 @@
 const ClickCounter = (props) => {
 
-    const {count, incrementSet} = props
+    const {count, incrementSet, color} = props
+    const style = "red" === color ? {backgroundColor:"red", color:"#fff"} : {backgroundColor:"black", color:"#fff"}
 
   return (
     <div>
-      <button onClick={incrementSet}>Clicked {count} times</button>
+      <button style={style} onClick={incrementSet}>Clicked {count} times</button>
     </div>
   )
 }

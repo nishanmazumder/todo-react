@@ -1,15 +1,27 @@
-import React from 'react'
-import ClickCounter from './ClickCounter'
-import Counter from './Counter'
+import React from "react";
+import ClickCounter from "./ClickCounter";
+import Counter from "./Counter";
 
 export default class RenderProps extends React.Component {
+  state = {
+    color: "red",
+  };
+
   render() {
+    const { color } = this.state;
+
     return (
       <>
-      <Counter children={({count, incrementSet})=>{
-        <ClickCounter count={count} incrementSet={incrementSet}/>
-      }}/>
+        <Counter>
+          {(count, incrementSet) => (
+            <ClickCounter
+              color={color}
+              count={count}
+              incrementSet={incrementSet}
+            />
+          )}
+        </Counter>
       </>
-    )
+    );
   }
 }
