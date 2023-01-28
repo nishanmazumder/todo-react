@@ -2,14 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
-import Calculator from './components/calculator/Calculator';
+// import AppClock from './components/clock/AppClock';
+// import Calculator from './components/calculator/Calculator';
+// import Composition from './components/composition/Composition';
+// import Hoc from './components/hoc/HOC';
+import RenderProps from './components/renderprops/RenderProps';
+
+
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
-    <Calculator />
+    {/* <AppClock/> */}
+    {/* <Calculator /> */}
+    {/* <Composition/> */}
+    {/* < Hoc/> */}
+    <RenderProps/>
+
   </React.StrictMode>
 );
 

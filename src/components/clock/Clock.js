@@ -1,8 +1,6 @@
 import React from "react";
 import Button from "./Button";
 
-import Component from "./Component";
-
 class Clock extends React.Component {
   // constructor(props) {
   //   super(props);
@@ -41,7 +39,6 @@ class Clock extends React.Component {
         ) : (
           <Button change={this.localChange} local="bn-BD" show/>
         )}
-        <Component />
       </>
     );
   }
