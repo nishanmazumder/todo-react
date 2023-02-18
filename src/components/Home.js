@@ -8,7 +8,7 @@ class Home extends React.Component {
       name: "Nishan",
       count: 0,
       users: [],
-      user: {name: "Nishan"},
+      user: { name: "Nishan" },
       currentUser: 0,
       // test: this.state.name,
       // getUser : ()=>{
@@ -34,31 +34,40 @@ class Home extends React.Component {
     // this.arr = ["test", 1, 4, true, { office: "work", isAvailable: true }];
   }
 
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({ users: data });
+        // console.log(data)
+      });
+  }
+
   changeName = () => {
     this.setState({ name: "Mazumder" });
   };
 
   plus = () => {
-    this.setState((stateObj) => {
-      return { count: stateObj.count + 1 };
+    this.setState((prvCount) => {
+      return { count: prvCount.count + 1 };
     });
   };
 
   minus = () => {
-    this.setState((stateVal) => {
-      if (stateVal.count <= 0) {
+    this.setState((prvCount) => {
+      if (prvCount.count <= 0) {
         return;
       } else {
-        return { count: stateVal.count - 1 };
+        return { count: prvCount.count - 1 };
       }
     });
   };
 
   nextUser = () => {
-    this.setState((nxtUser) => {
+    this.setState((prvUser) => {
       return {
-        currentUser: nxtUser.currentUser + 1,
-        user: nxtUser.users[this.state.currentUser],
+        currentUser: prvUser.currentUser + 1,
+        user: prvUser.users[this.state.currentUser],
       };
     });
   };
@@ -72,15 +81,6 @@ class Home extends React.Component {
       };
     });
   };
-
-  componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((res) => res.json())
-      .then((data) => {
-        this.setState({ users: data });
-        // console.log(data)
-      });
-  }
 
   render() {
     return (

@@ -1,26 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
 // import App from './App';
+// import Home from "./components/Home";
 // import AppClock from './components/clock/AppClock';
 // import Calculator from './components/calculator/Calculator';
 // import Composition from './components/composition/Composition';
 // import Hoc from './components/hoc/HOC';
-import RenderProps from './components/renderprops/RenderProps';
+// import RenderProps from './components/renderprops/RenderProps';
+import Contxt from "./components/context/app";
 
+import reportWebVitals from "./reportWebVitals";
 
-import reportWebVitals from './reportWebVitals';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    {/* <Home /> */}
     {/* <App /> */}
     {/* <AppClock/> */}
     {/* <Calculator /> */}
     {/* <Composition/> */}
     {/* < Hoc/> */}
-    <RenderProps/>
-
+    {/* <RenderProps /> */}
+    <Contxt />
   </React.StrictMode>
 );
 
