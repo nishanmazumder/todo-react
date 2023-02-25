@@ -13,12 +13,15 @@ class MyContext {
   };
 }
 
-function createContext(value) {
-  const context = new MyContext(value);
+function createContext(value = null) {
+  const context = new MyContext("Provider");
+
   return {
     Provider: context.Provider,
     Consumer: context.Consumer,
   };
 }
+
+
 
 export default createContext;

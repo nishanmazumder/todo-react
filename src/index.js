@@ -8,7 +8,7 @@ import "./index.css";
 // import Composition from './components/composition/Composition';
 // import Hoc from './components/hoc/HOC';
 // import RenderProps from './components/renderprops/RenderProps';
-import Contxt from "./components/context/app";
+import Contxt from "./components/context/App";
 
 import reportWebVitals from "./reportWebVitals";
 

@@ -1,35 +1,41 @@
 import React from "react";
-import ColorContext from "./color";
-import Counter from "./counter";
-import Display from "./display";
-import Box from "./box";
+import ColorContext from "./Color";
+import Counter from "./Counter";
+import Display from "./Display";
+import Box from "./Box";
+import Button from "./Button";
 
 class Contxt extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      click: 1,
-      theme: "light",
-      box: "green",
-    };
-  }
+	constructor(props) {
+		super(props);
+		this.state = {
+			click: 1,
+			theme: "light",
+			box: "blue",
+		};
+	}
 
-  render() {
-    const { click, box } = this.state;
+	render() {
+		const { click, box } = this.state;
 
-    return (
-      <>
-        <Counter click={click}>
-          {(click, handleClick) => (
-            <Display click={click} handleClick={handleClick} />
-          )}
-        </Counter>
-        <ColorContext.Provider box={{ box }}>
-          <Box />;
-        </ColorContext.Provider>
-      </>
-    );
-  }
+		return (
+			<>
+				<Counter click={click}>
+					{(click, handleClick) => (
+						<Display click={click} handleClick={handleClick} label="Count" />
+					)}
+				</Counter>
+
+            <Button>
+               Move Left
+            </Button>
+
+				<ColorContext.Provider value={{ theme: box }}>
+					<Box />
+				</ColorContext.Provider>
+			</>
+		);
+	}
 }
 
 export default Contxt;

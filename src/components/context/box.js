@@ -1,19 +1,15 @@
 import React, { Component } from "react";
-import ColorContext from "./color";
-import Structure from "./structure";
+import ColorContext from "./Color";
+import Structure from "./StructureBox";
 
 export default class Box extends Component {
-  render() {
-    return (
-      // <Structure bg={"green"} />
-
-      <ColorContext.Consumer>
-        {({ box }) => {
-          console.log(box);
-
-          // <Structure bg={{ box }} />;
-        }}
-      </ColorContext.Consumer>
-    );
-  }
+   render() {
+      return (
+         <ColorContext.Consumer>
+            {({ theme }) => {
+               return <Structure theme={{ theme }} />
+            }}
+         </ColorContext.Consumer>
+      );
+   }
 }

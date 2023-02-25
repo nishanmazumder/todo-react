@@ -1,7 +1,7 @@
-import createContext from "./context";
+import createContext from "./Context";
 
 const ColorContext = createContext({
-  box: "yellow",
+	box: "yellow",
 });
 
 export default ColorContext;
