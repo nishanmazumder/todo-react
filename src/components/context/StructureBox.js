@@ -7,22 +7,23 @@ export default class Structure extends Component {
          box: {
             height: "150px",
             width: "150px",
-         },
-         theme: "green"
+            margin: "0px auto",
+            marginLeft: 0,
+            background: "black"
+         }
       };
    }
 
    static getDerivedStateFromProps(props, state) {
-      return {
-         theme: props.theme
-      };
+      let box = { ...state.box }
+      box.background = props.theme.theme
+      box.marginLeft = props.move
+      return { box };
    }
 
    render() {
-      const { theme } = this.state.theme;
-
       return (
-         <div style={{ height: "150px", width: "150px", background: theme }}>
+         <div style={this.state.box}>
             test
          </div>
       );

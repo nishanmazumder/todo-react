@@ -6,8 +6,8 @@ export default class Box extends Component {
    render() {
       return (
          <ColorContext.Consumer>
-            {({ theme }) => {
-               return <Structure theme={{ theme }} />
+            {({ theme, move }) => {
+               return <Structure move={move} theme={{ theme }} />
             }}
          </ColorContext.Consumer>
       );

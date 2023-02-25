@@ -8,10 +8,6 @@ class Counter extends React.Component {
 		};
 	}
 
-	static getDerivedStateFromProps(props, state) {
-		return { click: props.click };
-	}
-
 	increment = () => {
 		this.setState((prvState) => ({ click: prvState.click + 1 }));
 	};

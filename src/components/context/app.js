@@ -6,36 +6,48 @@ import Box from "./Box";
 import Button from "./Button";
 
 class Contxt extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			click: 1,
-			theme: "light",
-			box: "blue",
-		};
-	}
+   constructor(props) {
+      super(props);
+      this.state = {
+         click: 1,
+         theme: "light",
+         box: "blue",
+         move: 10
+      };
+   }
 
-	render() {
-		const { click, box } = this.state;
+   boxMoveLeft = () => {
+      this.setState((prvState) => ({
+         move: prvState.move - 10
+      }))
+   }
 
-		return (
-			<>
-				<Counter click={click}>
-					{(click, handleClick) => (
-						<Display click={click} handleClick={handleClick} label="Count" />
-					)}
-				</Counter>
+   boxMoveRight = () => {
+      this.setState((prvState) => ({
+         move: prvState.move + 10
+      }))
+   }
 
-            <Button>
-               Move Left
-            </Button>
+   render() {
+      const { click, box, move } = this.state;
 
-				<ColorContext.Provider value={{ theme: box }}>
-					<Box />
-				</ColorContext.Provider>
-			</>
-		);
-	}
+      return (
+         <>
+            <Counter click={click}>
+               {(click, handleClick) => (
+                  <Display click={click} handleClick={handleClick} label="Count" />
+               )}
+            </Counter>
+
+            <Button handleClick={this.boxMoveLeft} label="<= Move Left"></Button>
+            <Button handleClick={this.boxMoveRight} label="Move Right =>"></Button>
+
+            <ColorContext.Provider value={{ theme: box,  move: move}}>
+               <Box />
+            </ColorContext.Provider>
+         </>
+      );
+   }
 }
 
 export default Contxt;
