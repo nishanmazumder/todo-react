@@ -11,20 +11,25 @@ export default function UserData() {
    const [index, setIndex] = useState(0);
    const [showMore, setshowMore] = useState(false)
 
+   let hasPrv = index > 0;
+   let hasNxt = index < sculptureList.length
+
 
    const prvUserData = () => {
-      if (index === 0) return
-      setIndex(index - 1)
+      if(hasPrv){
+         setIndex(index - 1)
+      }
    }
 
    const nextUserData = () => {
-      setIndex(index + 1)
+      if(hasNxt){
+         setIndex(index + 1)
+      }
    }
 
    const showMoreData = () => {
       setshowMore(!showMore)
    }
-
 
    let userData = sculptureList[index]
 
@@ -32,7 +37,7 @@ export default function UserData() {
       <>
          <Container fluid>
             <Row>
-               <Col><Button variant="outline-secondary" onClick={prvUserData}>Previous</Button></Col>
+               <Col><Button variant="outline-secondary" onClick={prvUserData} disabled={!hasPrv}>Previous</Button></Col>
                <Col><Button variant="outline-secondary" onClick={nextUserData}>Next</Button></Col>
             </Row>
             <Row>
