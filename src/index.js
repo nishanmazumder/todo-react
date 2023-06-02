@@ -8,7 +8,9 @@ import "./index.css";
 // import Composition from './components/composition/Composition';
 // import Hoc from './components/hoc/HOC';
 // import RenderProps from './components/renderprops/RenderProps';
-import Contxt from "./components/context/App";
+// import Contxt from "./components/context/App";
+// import Condition from "./components/jsx/condition";
+import UserData from "./components/jsx/UseState";
 
 import reportWebVitals from "./reportWebVitals";
 
@@ -22,7 +24,10 @@ root.render(
     {/* <Composition/> */}
     {/* < Hoc/> */}
     {/* <RenderProps /> */}
-    <Contxt />
+    {/* <Contxt /> */}
+   {/* {<Condition/>} */}
+   <UserData/>
+   
   </React.StrictMode>
 );
 
