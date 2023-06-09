@@ -10,7 +10,8 @@ import "./index.css";
 // import RenderProps from './components/renderprops/RenderProps';
 // import Contxt from "./components/context/App";
 // import Condition from "./components/jsx/condition";
-import UserData from "./components/jsx/UseState";
+// import UserData from "./components/jsx/UseState";
+import Object from "./components/jsx/Object";
 
 import reportWebVitals from "./reportWebVitals";
 
@@ -26,7 +27,8 @@ root.render(
     {/* <RenderProps /> */}
     {/* <Contxt /> */}
    {/* {<Condition/>} */}
-   <UserData/>
+   {/* <UserData/> */}
+   <Object/>
    
   </React.StrictMode>
 );
