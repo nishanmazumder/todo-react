@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import { useImmer } from "use-immer";
 
 export default function Object() {
 
@@ -8,9 +9,41 @@ export default function Object() {
       y : 0 
    })
 
-   console.log(pointer);
+   const [person, updatePerson] = useImmer({ //use state work same
+      name: 'Niki de Saint Phalle',
+      artwork: {
+        title: 'Blue Nana',
+        city: 'Hamburg',
+        image: 'https://i.imgur.com/Sd1AgUOm.jpg',
+      }
+    });
+
+    // immer way
+    function handleNameChange(e){
+      updatePerson(draft => {
+         draft.name = e.target.value
+      })
+    }
+
+    function handleTitleChange(e){
+      updatePerson(draft => {
+         draft.title = e.target.value
+      })
+    }
+
+    // react way
+    function handleCityChange(e){
+      updatePerson({
+         ...person,
+         artwork: {
+            ...person.artwork,
+            city: e.target.value
+         }
+      })
+    }
 
   return (
+    <>
     <div
     onPointerMove={ e => {
       SetPointer({
@@ -34,5 +67,14 @@ export default function Object() {
             transform: `translate(${pointer.x}px, ${pointer.y}px)`
          }}></div>
       </div>
+
+      <div className='form'>
+         <form>
+            <input type='text' value={person.name} onChange={handleNameChange}/>
+            <input type='text' value={person.artwork.title} onChange={handleTitleChange}/>
+            <input type='text' value={person.artwork.city} onChange={handleCityChange}/>
+         </form>
+      </div>
+    </>
   )
 }

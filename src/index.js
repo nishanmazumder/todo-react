@@ -11,7 +11,8 @@ import "./index.css";
 // import Contxt from "./components/context/App";
 // import Condition from "./components/jsx/condition";
 // import UserData from "./components/jsx/UseState";
-import Object from "./components/jsx/Object";
+// import Object from "./components/jsx/Object";
+import Canvas from "./components/jsx/box/App";
 
 import reportWebVitals from "./reportWebVitals";
 
@@ -28,7 +29,8 @@ root.render(
     {/* <Contxt /> */}
    {/* {<Condition/>} */}
    {/* <UserData/> */}
-   <Object/>
+   {/* <Object/> */}
+   <Canvas/>
    
   </React.StrictMode>
 );
