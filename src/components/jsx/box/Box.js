@@ -12,7 +12,8 @@ export default function Box({
    ] = useState(null);
 
    function handlePointerDown(e) {
-      e.target.setPointerCapture(e.pointerId);
+      // e.target.setPointerCapture(e.pointerId);
+
       setLastCoordinates({
          x: e.clientX,
          y: e.clientY,

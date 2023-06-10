@@ -12,7 +12,8 @@ import "./index.css";
 // import Condition from "./components/jsx/condition";
 // import UserData from "./components/jsx/UseState";
 // import Object from "./components/jsx/Object";
-import Canvas from "./components/jsx/box/App";
+// import Canvas from "./components/jsx/box/App";
+import Array from "./components/jsx/Array/App";
 
 import reportWebVitals from "./reportWebVitals";
 
@@ -30,7 +31,8 @@ root.render(
    {/* {<Condition/>} */}
    {/* <UserData/> */}
    {/* <Object/> */}
-   <Canvas/>
+   {/* <Canvas/> */}
+   <Array/>
    
   </React.StrictMode>
 );
