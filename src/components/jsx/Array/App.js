@@ -1,13 +1,14 @@
 import { useState } from "react";
 import Counter from "./Counter";
+import CheckList from "./Checked";
+
+let initialArtists = [
+   { id: 0, title: 'Big Bellies', seen: false },
+   { id: 1, title: 'Lunar Landscape', seen: false },
+   { id: 2, title: 'Terracotta Army', seen: true }
+];
 
 let userId = 0;
-
-// let initialArtists = [
-//    { id: 0, name: 'Marta Colvin Andrade' },
-//    { id: 1, name: 'Lamidi Olonade Fakeye' },
-//    { id: 2, name: 'Louise Nevelson' },
-// ];
 
 export default function Array() {
    const [name, setName] = useState('');
@@ -26,8 +27,6 @@ export default function Array() {
       ];
 
       setPerson(newPerson);
-
-      console.log(persons);
 
       if (hasInsert) { // insert to 2nd position
          newPerson = [
@@ -70,6 +69,10 @@ export default function Array() {
          </ul>
          <div>
             <Counter />
+         </div>
+
+         <div>
+               <CheckList userList={initialArtists}/>
          </div>
       </>
    );
