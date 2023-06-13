@@ -1,29 +1,40 @@
 import React, { useState } from "react";
+import { useImmer } from "use-immer";
 
 export default function CheckList({ userList }) {
    const [listOne, setListOne] = useState(userList);
-   const [listTwo, setListTwo] = useState(userList);
+   const [listTwo, setListTwo] = useImmer(userList);
 
-   function handleToggle(userId, hasChecked) {
+   function handleToggleOne(userId, hasChecked) {
       setListOne(
          listOne.map(el => {
-
-            console.log(...el);
-
             if (el.id === userId) {
                return {
                   ...el,
                   seen: hasChecked
                }
-            }else{
+            } else {
                return el
             }
          })
       )
    }
 
+   // immer way
+   function handleToggleTwo(userId, hasChecked) {
+      setListTwo(
+         draft => {
+            const user = draft.find(a => a.id === userId)
+            user.seen = hasChecked
+         }
+      );
+   }
+
    return (
-      <ListItem listItems={listOne} onToggle={handleToggle} />
+      <>
+         <ListItem listItems={listOne} onToggle={handleToggleOne} />
+         <ListItem listItems={listTwo} onToggle={handleToggleTwo} />
+      </>
    );
 
 }
