@@ -13,7 +13,8 @@ import "./index.css";
 // import UserData from "./components/jsx/UseState";
 // import Object from "./components/jsx/Object";
 // import Canvas from "./components/jsx/box/App";
-import Array from "./components/jsx/Array/App";
+// import Array from "./components/jsx/Array/App";
+import TaskApp from "./components/jsx/TaskApp/App";
 
 import reportWebVitals from "./reportWebVitals";
 
@@ -32,7 +33,8 @@ root.render(
    {/* <UserData/> */}
    {/* <Object/> */}
    {/* <Canvas/> */}
-   <Array/>
+   {/* <Array/> */}
+   <TaskApp/>
    
   </React.StrictMode>
 );
