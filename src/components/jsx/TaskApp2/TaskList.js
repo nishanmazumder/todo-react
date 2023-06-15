@@ -22,7 +22,10 @@ function Task({ task, onDelete, onChange }) {
    if (isEditing) {
       todoContent = (
          <>
-            <input value={task.title} onChange={e => e.target.value} />
+            <input value={task.title} onChange={e => onChange({
+               ...task,
+               title : e.target.value
+            })} />
             <button onClick={() => { setEditing(false) }}>Save</button>
          </>
       )

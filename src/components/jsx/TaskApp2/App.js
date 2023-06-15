@@ -26,7 +26,15 @@ export default function TaskApp2() {
    }
 
    function handleOnchange(nexTodo){
-      console.log(nexTodo);
+      setAllTask(
+         allTask.map(task => {
+            if(task.id === nexTodo.id){
+               return nexTodo;
+            }else{
+               return task;
+            }
+         })
+      )
    }
 
    return (
