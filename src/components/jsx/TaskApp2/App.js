@@ -10,7 +10,7 @@ export default function TaskApp2() {
       { id: 0, title: 'Buy milk', done: true }
    ]);
 
-   function handleAddTask(task){
+   function handleAddTask(task) {
       setAllTask([
          ...allTask,
          {
@@ -21,10 +21,18 @@ export default function TaskApp2() {
       ])
    }
 
-  return (
-    <>
-    <AddTask addTodo={handleAddTask}/>
-    <TaskList allTask={allTask}/>
-    </>
-  )
+   function handleDeleteTask(id) {
+      setAllTask(allTask.filter(task => task.id !== id))
+   }
+
+   function handleOnchange(nexTodo){
+      console.log(nexTodo);
+   }
+
+   return (
+      <>
+         <AddTask addTodo={handleAddTask} />
+         <TaskList allTask={allTask} onDeleteTodo={handleDeleteTask} onChangeTodo={handleOnchange}/>
+      </>
+   )
 }
