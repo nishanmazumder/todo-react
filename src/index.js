@@ -15,7 +15,8 @@ import "./index.css";
 // import Canvas from "./components/jsx/box/App";
 // import Array from "./components/jsx/Array/App";
 // import TaskApp from "./components/jsx/TaskApp/App";
-import TaskApp2 from "./components/jsx/TaskApp2/App";
+// import TaskApp2 from "./components/jsx/TaskApp2/App";
+import Todo from "./components/jsx/TaskApp3/App";
 
 import reportWebVitals from "./reportWebVitals";
 
@@ -36,8 +37,8 @@ root.render(
    {/* <Canvas/> */}
    {/* <Array/> */}
    {/* <TaskApp/> */}
-   <TaskApp2/>
-   
+   {/* <TaskApp2/> */}
+   <Todo/>
   </React.StrictMode>
 );
 
