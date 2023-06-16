@@ -16,7 +16,8 @@ import "./index.css";
 // import Array from "./components/jsx/Array/App";
 // import TaskApp from "./components/jsx/TaskApp/App";
 // import TaskApp2 from "./components/jsx/TaskApp2/App";
-import Todo from "./components/jsx/TaskApp3/App";
+// import Todo from "./components/jsx/TaskApp3/App";
+import Immer from "./components/jsx/TaskAPPImmer/App";
 
 import reportWebVitals from "./reportWebVitals";
 
@@ -38,7 +39,8 @@ root.render(
    {/* <Array/> */}
    {/* <TaskApp/> */}
    {/* <TaskApp2/> */}
-   <Todo/>
+   {/* <Todo/> */}
+   <Immer/>
   </React.StrictMode>
 );
 
