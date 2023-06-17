@@ -18,7 +18,8 @@ import "./index.css";
 // import TaskApp2 from "./components/jsx/TaskApp2/App";
 // import Todo from "./components/jsx/TaskApp3/App";
 // import Immer from "./components/jsx/TaskAPPImmer/App";
-import FormSubmit from "./components/jsx/Form/App";
+// import FormSubmit from "./components/jsx/Form/App";
+import EditProfile from "./components/jsx/Form/Profiler";
 
 import reportWebVitals from "./reportWebVitals";
 
@@ -42,7 +43,8 @@ root.render(
    {/* <TaskApp2/> */}
    {/* <Todo/> */}
    {/* <Immer/> */}
-   <FormSubmit/>
+   {/* <FormSubmit/> */}
+   <EditProfile/>
   </React.StrictMode>
 );
 
