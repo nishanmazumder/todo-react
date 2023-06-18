@@ -7,6 +7,13 @@ export default function Todo() {
    const [task, allTask] = useState([
       { id: 0, title: "test", done: true }
    ]);
+   const [selectItem, setSelectItem] = useState(task[0])
+
+   const selectId = task.find(item => {
+      if (item.id === selectItem.id) {
+         return item
+      }
+   })
 
    function handleAddTask(title) {
       allTask([
@@ -23,7 +30,7 @@ export default function Todo() {
       allTask(
          task.map(el => {
             if (el.id === newTodo.id) {
-               console.log(newTodo);
+               setSelectItem(newTodo)
                return newTodo
             } else {
                return el
@@ -42,6 +49,7 @@ export default function Todo() {
       <>
          <Add addTask={handleAddTask} />
          <Lists tasks={task} onChangeTodo={handleOnChange} onDeleteTodo={handleDeleteTodo} />
+         You select: {typeof selectId !== "undefined" && selectId.title}
       </>
    )
 }

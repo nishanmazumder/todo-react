@@ -19,33 +19,35 @@ import "./index.css";
 // import Todo from "./components/jsx/TaskApp3/App";
 // import Immer from "./components/jsx/TaskAPPImmer/App";
 // import FormSubmit from "./components/jsx/Form/App";
-import EditProfile from "./components/jsx/Form/Profiler";
+// import EditProfile from "./components/jsx/Form/Profiler";
+import TravelPlan from "./components/jsx/Nested/App";
 
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    {/* <Home /> */}
-    {/* <App /> */}
-    {/* <AppClock/> */}
-    {/* <Calculator /> */}
-    {/* <Composition/> */}
-    {/* < Hoc/> */}
-    {/* <RenderProps /> */}
-    {/* <Contxt /> */}
-   {/* {<Condition/>} */}
-   {/* <UserData/> */}
-   {/* <Object/> */}
-   {/* <Canvas/> */}
-   {/* <Array/> */}
-   {/* <TaskApp/> */}
-   {/* <TaskApp2/> */}
-   {/* <Todo/> */}
-   {/* <Immer/> */}
-   {/* <FormSubmit/> */}
-   <EditProfile/>
-  </React.StrictMode>
+   <React.StrictMode>
+      {/* <Home /> */}
+      {/* <App /> */}
+      {/* <AppClock/> */}
+      {/* <Calculator /> */}
+      {/* <Composition/> */}
+      {/* < Hoc/> */}
+      {/* <RenderProps /> */}
+      {/* <Contxt /> */}
+      {/* {<Condition/>} */}
+      {/* <UserData/> */}
+      {/* <Object/> */}
+      {/* <Canvas/> */}
+      {/* <Array/> */}
+      {/* <TaskApp/> */}
+      {/* <TaskApp2/> */}
+      {/* <Todo/> */}
+      {/* <Immer/> */}
+      {/* <FormSubmit/> */}
+      {/* <EditProfile/> */}
+      <TravelPlan />
+   </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
