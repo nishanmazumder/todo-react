@@ -20,7 +20,8 @@ import "./index.css";
 // import Immer from "./components/jsx/TaskAPPImmer/App";
 // import FormSubmit from "./components/jsx/Form/App";
 // import EditProfile from "./components/jsx/Form/Profiler";
-import TravelPlan from "./components/jsx/Nested/App";
+// import TravelPlan from "./components/jsx/Nested/App";
+import MailClient from "./components/jsx/Multi/App";
 
 import reportWebVitals from "./reportWebVitals";
 
@@ -46,7 +47,8 @@ root.render(
       {/* <Immer/> */}
       {/* <FormSubmit/> */}
       {/* <EditProfile/> */}
-      <TravelPlan />
+      {/* <TravelPlan /> */}
+      <MailClient />
    </React.StrictMode>
 );
 
