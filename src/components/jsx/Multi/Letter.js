@@ -1,23 +1,19 @@
 export default function Letter({
    letter,
-   onToggle,
-   isSelected,
- }) {
+   selectToggle,
+   isChecked,
+}) {
    return (
-     <li className={
-       isSelected ? 'selected' : ''
-     }>
-       <label>
-         <input
-           type="checkbox"
-           checked={isSelected}
-           onChange={() => {
-             onToggle(letter.id);
-           }}
-         />
-         {letter.subject}
-       </label>
-     </li>
+      <li>
+         <label>
+            <input
+               type="checkbox"
+               checked={isChecked}
+               onChange={
+                  () => selectToggle(letter.id)
+               } />
+            {letter.subject}
+         </label>
+      </li>
    )
- }
- 
+}
