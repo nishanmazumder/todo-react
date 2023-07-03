@@ -17,7 +17,7 @@ export default function MailClient() {
 
    }
    
-   console.log(selected);
+   // console.log(selected);
    return (
       <ul>
          {

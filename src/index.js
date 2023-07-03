@@ -22,6 +22,7 @@ import "./index.css";
 // import EditProfile from "./components/jsx/Form/Profiler";
 // import TravelPlan from "./components/jsx/Nested/App";
 import MailClient from "./components/jsx/Multi/App";
+import ProductTable from "./components/jsx/Product/App";
 
 import reportWebVitals from "./reportWebVitals";
 
@@ -48,7 +49,8 @@ root.render(
       {/* <FormSubmit/> */}
       {/* <EditProfile/> */}
       {/* <TravelPlan /> */}
-      <MailClient />
+      {/* <MailClient /> */}
+      {<ProductTable />}
    </React.StrictMode>
 );
 
