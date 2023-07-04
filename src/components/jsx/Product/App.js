@@ -8,7 +8,42 @@ const PRODUCTS = [
 ];
 
 
+function ProductCat({ category }) {
+   return (
+      <tr>
+         <th>{category}</th>
+      </tr>
+   )
+}
+function Product({ product }) {
+   return (
+      <tr>
+         <td>{product.name}</td>
+         <td>{product.price}</td>
+      </tr>
+   )
+}
+
+
 export default function ProductTable() {
+
+   const productRows = [];
+   let lastCategory = null;
+
+   PRODUCTS.map((product) => {
+      if (product.category !== lastCategory) {
+         productRows.push(
+            <ProductCat key={product.category} category={product.category} />
+         )
+      }
+
+      productRows.push(
+         <Product key={product.name} product={product} />
+      )
+
+      lastCategory = product.category
+   })
+
    return (
       <div>
          <div className="searchbar">
@@ -18,13 +53,18 @@ export default function ProductTable() {
             <input type="checkbox" />
             Show Stock Product only
          </label>
-         <ul>
-            {
-               PRODUCTS.map((product, i) => (
-                  <li key={i}>{product.name}</li>
-               ))
-            }
-         </ul>
+         <table>
+            <thead>
+               <tr>
+                  <th>Name</th>
+                  <th>Price</th>
+               </tr>
+            </thead>
+            <tbody>
+               {productRows}
+            </tbody>
+         </table>
+
       </div>
    )
 }
