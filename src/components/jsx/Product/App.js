@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const PRODUCTS = [
    { category: "Fruits", price: "$1", stocked: true, name: "Apple" },
    { category: "Fruits", price: "$1", stocked: true, name: "Dragonfruit" },
@@ -15,6 +17,18 @@ function ProductCat({ category }) {
       </tr>
    )
 }
+
+function ProductSearch({ productStock }) {
+   return (
+      <div className="searchbar">
+         <input type="text" placeholder="Search..." />
+         <label>
+            <input type="checkbox" onChange={(e) => productStock(e.target.checked)} /> Show Stock Product only
+         </label>
+      </div>
+   )
+}
+
 function Product({ product }) {
    return (
       <tr>
@@ -25,7 +39,7 @@ function Product({ product }) {
 }
 
 
-export default function ProductTable() {
+function ProductTable({ productStock }) {
 
    const productRows = [];
    let lastCategory = null;
@@ -37,6 +51,11 @@ export default function ProductTable() {
          )
       }
 
+      // product stock check
+      if (productStock && !product.stocked) {
+         return
+      }
+
       productRows.push(
          <Product key={product.name} product={product} />
       )
@@ -46,13 +65,6 @@ export default function ProductTable() {
 
    return (
       <div>
-         <div className="searchbar">
-            <input type="text" placeholder="Search..." />
-         </div>
-         <label>
-            <input type="checkbox" />
-            Show Stock Product only
-         </label>
          <table>
             <thead>
                <tr>
@@ -66,5 +78,17 @@ export default function ProductTable() {
          </table>
 
       </div>
+   )
+}
+
+export default function FilterProductTable() {
+
+   const [isStock, setIsStock] = useState('');
+
+   return (
+      <>
+         <ProductSearch productStock={setIsStock} />
+         <ProductTable productStock={isStock} />
+      </>
    )
 }
