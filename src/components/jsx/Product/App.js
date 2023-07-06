@@ -18,10 +18,10 @@ function ProductCat({ category }) {
    )
 }
 
-function ProductSearch({ productStock }) {
+function ProductSearch({ searchProduct, productStock }) {
    return (
       <div className="searchbar">
-         <input type="text" placeholder="Search..." />
+         <input type="text" placeholder="Search..." onChange={(e) => searchProduct(e.target.value)} />
          <label>
             <input type="checkbox" onChange={(e) => productStock(e.target.checked)} /> Show Stock Product only
          </label>
@@ -39,12 +39,17 @@ function Product({ product }) {
 }
 
 
-function ProductTable({ productStock }) {
+function ProductTable({ searchProduct, productStock }) {
 
    const productRows = [];
    let lastCategory = null;
 
    PRODUCTS.map((product) => {
+
+      if (product.name.toLowerCase().indexOf(searchProduct.toLowerCase()) === -1) {
+         return
+      }
+
       if (product.category !== lastCategory) {
          productRows.push(
             <ProductCat key={product.category} category={product.category} />
@@ -59,6 +64,8 @@ function ProductTable({ productStock }) {
       productRows.push(
          <Product key={product.name} product={product} />
       )
+
+
 
       lastCategory = product.category
    })
@@ -84,11 +91,12 @@ function ProductTable({ productStock }) {
 export default function FilterProductTable() {
 
    const [isStock, setIsStock] = useState('');
+   const [fileterTxt, setFileterTxt] = useState('');
 
    return (
       <>
-         <ProductSearch productStock={setIsStock} />
-         <ProductTable productStock={isStock} />
+         <ProductSearch productStock={setIsStock} searchProduct={setFileterTxt} />
+         <ProductTable productStock={isStock} searchProduct={fileterTxt} />
       </>
    )
 }
