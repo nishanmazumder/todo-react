@@ -65,8 +65,6 @@ function ProductTable({ searchProduct, productStock }) {
          <Product key={product.name} product={product} />
       )
 
-
-
       lastCategory = product.category
    })
 
