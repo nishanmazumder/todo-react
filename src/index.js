@@ -23,7 +23,8 @@ import "./index.css";
 // import TravelPlan from "./components/jsx/Nested/App";
 // import MailClient from "./components/jsx/Multi/App";
 // import ProductTable from "./components/jsx/Product/App";
-import SyncedInputs from "./components/jsx/Accordion/App";
+// import SyncedInputs from "./components/jsx/Accordion/App";
+import FilterableList from "./components/jsx/FilteringTXT/App";
 
 import reportWebVitals from "./reportWebVitals";
 
@@ -52,7 +53,8 @@ root.render(
       {/* <TravelPlan /> */}
       {/* <MailClient /> */}
       {/* {<ProductTable />} */}
-      {<SyncedInputs />}
+      {/* {<SyncedInputs />} */}
+      <FilterableList />
    </React.StrictMode>
 );
 
