@@ -23,9 +23,6 @@ function Reducer() {
    }
 
    function handleOnChange(task) {
-
-      console.log(task);
-
       dispatch({
          type: 'edit',
          task: task

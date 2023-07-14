@@ -22,12 +22,12 @@ function Task({ task, newTask }) {
    if (edit) {
       return content = (
          <li>
-            <input type='text' onChange={(e) => newTask([
-               ...task,
+            <input value={task.text} onChange={e => newTask(
                {
+                  ...task,
                   text: e.target.value
                }
-            ])} />
+            )} />
             <button onClick={() => isEdit(false)}>Save</button>
          </li>
       )

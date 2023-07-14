@@ -16,15 +16,13 @@ export default function tasksReducer(tasks, action) {
       }
 
       case 'edit': {
-         if(action.id )
-         return [
-            ...tasks,
-            {
-               id: action.id,
-               text: action.text,
-               done: false
+         tasks.map(t => {
+            if (t.id === action.id) {
+               return action.task
+            } else {
+               return t
             }
-         ];
+         })
       }
 
       default: {
