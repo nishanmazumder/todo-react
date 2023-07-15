@@ -2,7 +2,6 @@ export default function tasksReducer(tasks, action) {
 
    console.log(action);
 
-
    switch (action.type) {
       case 'add': {
          return [
@@ -16,13 +15,17 @@ export default function tasksReducer(tasks, action) {
       }
 
       case 'edit': {
-         tasks.map(t => {
-            if (t.id === action.id) {
+         return tasks.map(t => {
+            if (t.id === action.task.id) {
                return action.task
             } else {
                return t
             }
          })
+      }
+
+      case 'delete': {
+         return tasks.filter(task => task.id !== action.id)
       }
 
       default: {

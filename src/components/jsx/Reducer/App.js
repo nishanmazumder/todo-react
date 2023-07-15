@@ -16,7 +16,7 @@ function Reducer() {
 
    function handleAddTask(text) {
       dispatch({
-         type: "add",
+         type: 'add',
          id: nextId++,
          text: text
       })
@@ -29,10 +29,17 @@ function Reducer() {
       })
    }
 
+   function handleDelete(id) {
+      dispatch({
+         type: 'delete',
+         id: id
+      })
+   }
+
    return (
       <>
          <Add addTask={handleAddTask} />
-         <TaskList tasks={tasks} onChange={handleOnChange} />
+         <TaskList allTasks={tasks} onChange={handleOnChange} onDelete={handleDelete} />
       </>
    )
 }

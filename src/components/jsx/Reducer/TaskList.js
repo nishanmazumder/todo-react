@@ -1,44 +1,48 @@
 import React, { useState } from 'react'
 
-function TaskList({ tasks, onChange }) {
-
-
+function TaskList({ allTasks, onChange, onDelete }) {
    return (
       <ul>
-         {tasks.map(task =>
-            <Task key={task.id} task={task} newTask={onChange} />
+         {allTasks.map(task =>
+            <li key={task.id}>
+               <Task task={task} changeTask={onChange} deleteTask={onDelete} />
+            </li>
          )}
       </ul>
-
-
    )
 }
 
-function Task({ task, newTask }) {
+function Task({ task, changeTask, deleteTask }) {
    const [edit, isEdit] = useState(false)
-
    let content;
 
    if (edit) {
-      return content = (
-         <li>
-            <input value={task.text} onChange={e => newTask(
+      content = (
+         <>
+            <input type='text' value={task.text} onChange={e => changeTask(
                {
                   ...task,
                   text: e.target.value
                }
             )} />
             <button onClick={() => isEdit(false)}>Save</button>
-         </li>
+         </>
       )
    } else {
-      return content = (
-         <li>
+      content = (
+         <>
             {task.text}
             <button onClick={() => isEdit(true)}>Edit</button>
-         </li>
+         </>
       )
    }
+
+   return (
+      <>
+         {content}
+         <button onClick={() => deleteTask(task.id)}>Delete</button>
+      </>
+   )
 }
 
 export default TaskList
