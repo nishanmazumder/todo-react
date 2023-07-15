@@ -27,7 +27,9 @@ import "./index.css";
 // import FilterableList from "./components/jsx/FilteringTXT/App";
 // import ContactManager from "./components/jsx/DetailsForm/App";
 // import Reducer from "./components/jsx/Reducer/App";
-import Messenger from "./components/jsx/Reducer/ChatApp/App";
+// import Messenger from "./components/jsx/Reducer/ChatApp/App";
+import Messenger from "./components/jsx/Reducer/ChatAppRed/App";
+
 
 import reportWebVitals from "./reportWebVitals";
 
@@ -60,6 +62,7 @@ root.render(
       {/* <FilterableList /> */}
       {/* <ContactManager/> */}
       {/* <Reducer/> */}
+      {/* <Messenger/> */}
       <Messenger/>
    </React.StrictMode>
 );
