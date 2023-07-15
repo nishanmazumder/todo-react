@@ -26,7 +26,8 @@ import "./index.css";
 // import SyncedInputs from "./components/jsx/Accordion/App";
 // import FilterableList from "./components/jsx/FilteringTXT/App";
 // import ContactManager from "./components/jsx/DetailsForm/App";
-import Reducer from "./components/jsx/Reducer/App";
+// import Reducer from "./components/jsx/Reducer/App";
+import Messenger from "./components/jsx/Reducer/ChatApp/App";
 
 import reportWebVitals from "./reportWebVitals";
 
@@ -58,7 +59,8 @@ root.render(
       {/* {<SyncedInputs />} */}
       {/* <FilterableList /> */}
       {/* <ContactManager/> */}
-      <Reducer/>
+      {/* <Reducer/> */}
+      <Messenger/>
    </React.StrictMode>
 );
 
