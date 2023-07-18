@@ -7,7 +7,7 @@ export const initialState = {
    },
 };
 
-export function messageRed(state, action) {
+export function messageReducer(state, action) {
    switch (action.type) {
       case 'select': {
          return {

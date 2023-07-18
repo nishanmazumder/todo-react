@@ -12,7 +12,9 @@ export default function ContactList({ contacts, selectedId, dispatch }) {
                            type: 'select',
                            id: contact.id
                         })
-                     }>{selectedId === contact.id ? <b>{contact.name}</b> : contact.name}</button>
+                     }>{selectedId === contact.id ?
+                        <b>{contact.name}</b> : contact.name}
+                     </button>
                   </li>)
             }
          </ul>

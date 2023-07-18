@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react'
 import ContactList from './ContactList';
 import Chat from './Chat';
-import { initialState, messageRed } from './messengerRed';
+import { initialState, messageReducer } from './messengerRed';
 
 const contacts = [
    { id: 0, name: 'Taylor', email: 'taylor@mail.com' },
@@ -10,7 +10,7 @@ const contacts = [
 ];
 
 export default function Messenger() {
-   const [state, dispatch] = useReducer(messageRed, initialState);
+   const [state, dispatch] = useReducer(messageReducer, initialState);
    const contact = contacts.find(contact => contact.id === state.selectedId);
 
    return (
