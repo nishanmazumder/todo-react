@@ -15,8 +15,8 @@ export default function Messenger() {
 
    return (
       <>
-         <ContactList contacts={contacts} selectedId={dispatch} />
-         <Chat value={state} contact={contact} />
+         <ContactList contacts={contacts} dispatch={dispatch} />
+         <Chat state={state} contact={contact} dispatch={dispatch}/>
       </>
    )
 }

@@ -1,15 +1,26 @@
 import React from 'react'
 
-export default function Chat({ value, contact }) {
+export default function Chat({ state, contact, dispatch }) {
+
 
    console.log(contact);
 
    return (
       <section>
-         <textarea value={value.message}
+         <textarea value={state.message}
             placeholder={`Hello ${contact.name}`}
-            onChange={e => e.target.value} />
-         <button>Send to {contact.email}</button>
+            onChange={e => {
+               dispatch({
+                  type: 'edit_msg',
+                  message: e.target.value
+               })
+            }} />
+         <button onClick={() => {
+            dispatch({
+               type: 'edit_msg',
+               message: ''
+            })
+         }}>Send to {contact.email}</button>
       </section>
    )
 }

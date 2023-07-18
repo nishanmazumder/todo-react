@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ContactList({ contacts, selectedId }) {
+export default function ContactList({ contacts, dispatch }) {
    return (
       <section>
          <ul>
@@ -8,7 +8,10 @@ export default function ContactList({ contacts, selectedId }) {
                contacts.map(contact =>
                   <li key={contact.id}>
                      <button onClick={() =>
-                        selectedId(contact.id)
+                        dispatch({
+                           type: 'select',
+                           id: contact.id
+                        })
                      }>{contact.name}</button>
                   </li>)
             }
