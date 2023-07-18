@@ -1,13 +1,10 @@
 import React from 'react'
 
 export default function Chat({ state, contact, dispatch }) {
-
-
-   console.log(contact);
-
+   
    return (
       <section>
-         <textarea value={state.message}
+         <textarea value={state.message[contact.id]}
             placeholder={`Hello ${contact.name}`}
             onChange={e => {
                dispatch({
@@ -16,9 +13,9 @@ export default function Chat({ state, contact, dispatch }) {
                })
             }} />
          <button onClick={() => {
+            alert(`Message sent to ${contact.name}!`)
             dispatch({
-               type: 'edit_msg',
-               message: ''
+               type: 'sent_msg'
             })
          }}>Send to {contact.email}</button>
       </section>

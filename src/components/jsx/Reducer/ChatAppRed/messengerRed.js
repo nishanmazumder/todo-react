@@ -1,6 +1,10 @@
 export const initialState = {
    selectedId: 0,
-   message: 'Hello',
+   message: {
+      0: "Hi Taylor",
+      1: "Hi Alice",
+      2: "Hi Bob",
+   },
 };
 
 export function messageRed(state, action) {
@@ -15,7 +19,20 @@ export function messageRed(state, action) {
       case 'edit_msg': {
          return {
             ...state,
-            message: action.message
+            message: {
+               ...state.message,
+               [state.selectedId]: action.message
+            }
+         }
+      }
+
+      case 'sent_msg': {
+         return {
+            ...state,
+            message: {
+               ...state.message,
+               [state.selectedId]: ''
+            }
          }
       }
 

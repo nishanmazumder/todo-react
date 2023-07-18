@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ContactList({ contacts, dispatch }) {
+export default function ContactList({ contacts, selectedId, dispatch }) {
    return (
       <section>
          <ul>
@@ -12,7 +12,7 @@ export default function ContactList({ contacts, dispatch }) {
                            type: 'select',
                            id: contact.id
                         })
-                     }>{contact.name}</button>
+                     }>{selectedId === contact.id ? <b>{contact.name}</b> : contact.name}</button>
                   </li>)
             }
          </ul>
