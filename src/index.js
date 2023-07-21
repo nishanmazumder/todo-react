@@ -28,8 +28,9 @@ import "./index.css";
 // import ContactManager from "./components/jsx/DetailsForm/App";
 // import Reducer from "./components/jsx/Reducer/App";
 // import Messenger from "./components/jsx/Reducer/ChatApp/App";
-import Messenger from "./components/jsx/Reducer/ChatAppRed/App";
-import Post from "./components/jsx/Context/Context1/App";
+// import Messenger from "./components/jsx/Reducer/ChatAppRed/App";
+// import Post from "./components/jsx/Context/Context1/App";
+import App from "./components/jsx/Context/Challenge/App";
 
 
 import reportWebVitals from "./reportWebVitals";
@@ -65,7 +66,8 @@ root.render(
       {/* <Reducer/> */}
       {/* <Messenger/> */}
       {/* <Messenger/> */}
-      <Post/>
+      {/* <Post/> */}
+      <App/>
    </React.StrictMode>
 );
 
