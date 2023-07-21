@@ -30,7 +30,8 @@ import "./index.css";
 // import Messenger from "./components/jsx/Reducer/ChatApp/App";
 // import Messenger from "./components/jsx/Reducer/ChatAppRed/App";
 // import Post from "./components/jsx/Context/Context1/App";
-import App from "./components/jsx/Context/Challenge/App";
+// import App from "./components/jsx/Context/Challenge/App";
+import Todo from "./components/jsx/ContextReducer/App";
 
 
 import reportWebVitals from "./reportWebVitals";
@@ -67,7 +68,8 @@ root.render(
       {/* <Messenger/> */}
       {/* <Messenger/> */}
       {/* <Post/> */}
-      <App/>
+      {/* <App/> */}
+      <Todo/>
    </React.StrictMode>
 );
 
