@@ -32,7 +32,8 @@ import "./index.css";
 // import Post from "./components/jsx/Context/Context1/App";
 // import App from "./components/jsx/Context/Challenge/App";
 // import Todo from "./components/jsx/ContextReducer/App";
-import Stopwatch from "./components/jsx/Stopwatch/App";
+// import Stopwatch from "./components/jsx/Stopwatch/App";
+import Slider from "./components/jsx/Slider/App";
 
 
 import reportWebVitals from "./reportWebVitals";
@@ -71,7 +72,8 @@ root.render(
       {/* <Post/> */}
       {/* <App/> */}
       {/* <Todo/> */}
-      <Stopwatch/>
+      {/* <Stopwatch/> */}
+      <Slider/>
    </React.StrictMode>
 );
 
