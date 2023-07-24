@@ -1,23 +1,46 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import "./Style.css";
 
 export default function Slider() {
+
+   const imgRef = useRef(0);
+
+   function handleScrol(itemID) {
+      const map = getMap();
+      const node = map.get(itemID);
+      node.scrollIntoView({
+         behavior: 'smooth',
+         block: 'nearest',
+         inline: 'center'
+      });
+   }
+
+   function getMap() {
+      if (!imgRef.current) {
+         return imgRef.current = new Map();
+      }
+
+      return imgRef.current
+   }
+
    return (
       <>
-         <ul style={{listStyle: 'none'}}>
-            <li style={{display: 'inline-block', padding: '10px'}}>
-               <button>3</button>
-            </li>
-            <li style={{display: 'inline-block', padding: '10px'}}>
-               <button>6</button>
-            </li>
-            <li style={{display: 'inline-block', padding: '10px'}}>
-               <button>9</button>
-            </li>
-         </ul>
-         <ul style={{listStyle: 'none', whiteSpace: 'nowrap'}}>
+         <nav>
+            <button onClick={() => handleScrol(3)}>3</button>
+            <button onClick={() => handleScrol(6)}>6</button>
+            <button onClick={() => handleScrol(9)}>9</button>
+         </nav>
+         <ul>
             {imageList.map(image => (
-               <li style={{display: 'inline-block', padding: '10px'}} key={image.id}>
-                  <img src={image.url}/>
+               <li key={image.id} ref={node => {
+                  const map = getMap();
+                  if (node) {
+                     map.set(image.id, node)
+                  } else {
+                     map.delete(image.id)
+                  }
+               }}>
+                  <img src={image.url} />
                </li>
             ))}
          </ul>
