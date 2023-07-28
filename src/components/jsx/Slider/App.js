@@ -34,13 +34,16 @@ export default function Slider() {
             {imageList.map(image => (
                <li key={image.id} ref={node => {
                   const map = getMap();
+
+                  console.log(map);
+
                   if (node) {
                      map.set(image.id, node)
                   } else {
                      map.delete(image.id)
                   }
                }}>
-                  <img src={image.url} />
+                  <img src={image.url} alt={`Cat-${image.id}`} />
                </li>
             ))}
          </ul>

@@ -33,7 +33,8 @@ import "./index.css";
 // import App from "./components/jsx/Context/Challenge/App";
 // import Todo from "./components/jsx/ContextReducer/App";
 // import Stopwatch from "./components/jsx/Stopwatch/App";
-import Slider from "./components/jsx/Slider/App";
+// import Slider from "./components/jsx/Slider/App";
+import InputRef from "./components/jsx/InputRef/App";
 
 
 import reportWebVitals from "./reportWebVitals";
@@ -73,7 +74,8 @@ root.render(
       {/* <App/> */}
       {/* <Todo/> */}
       {/* <Stopwatch/> */}
-      <Slider/>
+      {/* <Slider/> */}
+      <InputRef/>
    </React.StrictMode>
 );
 
