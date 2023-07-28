@@ -27,11 +27,11 @@ export default function InputRef() {
 
    return (
       <>
-         <MyInput onChange={(value)=>{
+         <MyInput onChange={(value) => {
             console.log(value)
          }} ref={inputRef} />
          <button onClick={() => {
-            handleFocus()
+            handleFocus();
          }}>focus</button>
       </>
    )
