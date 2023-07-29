@@ -2,14 +2,29 @@ nav{
    position: fixed;
    display: block;
    margin: 0px auto;
+   top: 250px;
+}
+
+button{
+   margin: 10px;
+   background: aqua;
+   border: 2px solid cadetblue;
 }
 
 ul{
+   padding-left: 0;
    list-style: none;
    white-space: nowrap;
+   width: 815px;
+   overflow: hidden;
+   background: rgb(59, 238, 229);
 }
 
 li{
    display: inline-block;
    padding: 10px;
+}
+
+li.active{
+   border: 2px solid red;
 }

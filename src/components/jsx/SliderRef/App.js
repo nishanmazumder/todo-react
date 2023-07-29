@@ -1,30 +1,57 @@
 import React, { useRef, useState } from 'react'
+import { flushSync } from 'react-dom';
 import "./Style.css";
 
 export default function SliderNP() {
    const selectImg = useRef(null);
-   const [index, setIndex] = useState(0)
+   const [index, setIndex] = useState(1)
 
-   console.log(selectImg);
+   function handlePrv() {
+      flushSync(() => {
+         if (index > 0) {
+            setIndex(index - 1)
+         }
+      })
 
-   function handleScroll() {
+      selectImg.current.scrollIntoView({
+         behavior: 'smooth',
+         block: 'nearest',
+         inline: 'center'
+      })
+   }
 
+   function handleNext() {
+      flushSync(() => {
+         if (index < imageList.length - 1) {
+            setIndex(index + 1)
+         }
+      })
+
+      selectImg.current.scrollIntoView({
+         behavior: 'smooth',
+         block: 'nearest',
+         inline: 'center'
+      })
    }
 
    return (
       <>
          <nav>
-            <button onClick={() => handleScroll(3)}>Previous</button>
-            <button onClick={() => handleScroll(6)}>Next</button>
+            <button onClick={() => handlePrv()}>Previous</button>
+            <button onClick={() => handleNext()}>Next</button>
          </nav>
 
          <ul>
             {
                imageList.map((image, i) => {
-                  return <li key={image.id} ref={
-                     i === index ? selectImg : null
-                  }>
-                     <img src={image.url} />
+                  return <li key={image.id}
+                     className={
+                        i === index ? "active" : ""
+                     }
+                     ref={
+                        i === index ? selectImg : null
+                     }>
+                     <img src={image.url} alt={'Cat #' + image.id} />
                   </li>
                })
             }
